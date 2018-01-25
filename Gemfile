@@ -11,6 +11,7 @@ gem 'rails', '~> 5.1.2'
 group :production do
   # Use pg as the production database for Active Record
   gem 'pg'
+  gem 'rails_12factor'
 end
 
 group :development do
@@ -20,6 +21,7 @@ group :development do
 end
 
 gem 'bootstrap-sass'
+gem 'devise'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -38,4 +40,5 @@ gem 'thor', '0.19.1'
 
 group :development do
   gem 'listen', '~> 3.0.5'
+  gem 'rspec-rails', '~> 3.0'
 end
