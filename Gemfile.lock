@@ -42,12 +42,17 @@ GEM
     autoprefixer-rails (7.2.5)
       execjs
     bcrypt (3.1.11)
+    better_errors (2.4.0)
+      coderay (>= 1.0.0)
+      erubi (>= 1.0.0)
+      rack (>= 0.9.0)
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     builder (3.2.3)
+    coderay (1.1.2)
     concurrent-ruby (1.0.5)
     crass (1.0.3)
     debug_inspector (0.0.3)
@@ -61,6 +66,10 @@ GEM
     erubi (1.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
+    figaro (1.1.1)
+      thor (~> 0.14)
+    foreman (0.84.0)
+      thor (~> 0.19.1)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (0.9.3)
@@ -190,8 +199,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  better_errors
   bootstrap-sass
   devise
+  figaro
+  foreman
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)

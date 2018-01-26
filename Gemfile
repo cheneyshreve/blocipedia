@@ -22,6 +22,8 @@ end
 
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'figaro'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -38,7 +40,9 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'thor', '0.19.1'
 
-group :development do
+group :development, :test do
   gem 'listen', '~> 3.0.5'
   gem 'rspec-rails', '~> 3.0'
+  gem 'foreman'
+  gem 'better_errors'
 end
