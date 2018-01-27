@@ -8,6 +8,13 @@ require 'rspec/rails'
 RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.include Devise::Test::ControllerHelpers, type: :view
+
+  # Include Warden test helpers specifically for login/logout
+  config.include Warden::Test::Helpers
+   # Tear down signed in user after each test
+  config.after :each do
+   Warden.test_reset!
+  end
 end
 
 # Add additional requires below this line. Rails is not loaded until this point!

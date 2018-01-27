@@ -46,5 +46,6 @@ group :development, :test do
   gem 'foreman'
   gem 'better_errors'
   gem 'rails-controller-testing'
+  gem 'shoulda'
   gem 'factory_girl_rails', '~> 4.0'
 end
