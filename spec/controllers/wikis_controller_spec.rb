@@ -18,16 +18,16 @@ RSpec.describe WikisController, type: :controller do
   #    end
   # end
 
-  describe "GET #show" do
-   it "returns http success" do
-     get :show, params: { id: my_wiki.id, user_id: my_wiki.user_id }
-     expect(response).to have_http_status(:success)
-   end
-    it "returns renders the #show view" do
-      get :show, params: {id: my_wiki.id, user_id: my_user.id }
-      expect(response).to render_template :show
-    end
-  end
+  # describe "GET #show" do
+  #  it "returns http success" do
+  #    get :show, params: { id: my_wiki.id, user_id: my_wiki.user_id }
+  #    expect(response).to have_http_status(:success)
+  #  end
+  #   it "returns renders the #show view" do
+  #     get :show, params: {id: my_wiki.id, user_id: my_user.id }
+  #     expect(response).to render_template :show
+  #   end
+  # end
   #
   # describe "GET #new" do
   #   it "returns http success" do
