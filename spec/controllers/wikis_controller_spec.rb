@@ -81,10 +81,9 @@ RSpec.describe WikisController, type: :controller do
       expect(assigns(:wiki)).to eq Wiki.last
     end
 
-    # need to update this one
     it "redirects to the new wiki" do
       post :create, params: { id: my_wiki.id, wiki: { title: "new wiki title", body: "new wiki body" } }
-      expect(response).to redirect_to(wikis_url)
+      expect(response).to redirect_to(wikis_path)
     end
 end
 
