@@ -1,10 +1,15 @@
 FactoryGirl.define do
-
+  sequence :email do |n|
+    letters = ('a'..'z').to_a
+    letters.shuffle!
+    "letters#{n}@factory.com"
+  end
   factory :user do
-    sequence(:email)      { |n| "person#{n}@example.com" }
+    email
     password              'password'
     password_confirmation 'password'
     confirmed_at          Time.now
-    sequence(:id)         { |n| n }
+    role :standard
   end
+
 end

@@ -1,6 +1,6 @@
 class WikisController < ApplicationController
 
-   # before_action :authenticate_user!, except: [:show, :new, :create]
+   before_action :authenticate_user!, except: [:show, :new, :create]
 
   def index
    @wikis = Wiki.all
@@ -37,6 +37,7 @@ class WikisController < ApplicationController
 
   def update
     @wiki = Wiki.find(params[:id])
+    authorize @wiki
     @wiki.assign_attributes(wiki_params)
 
     if @wiki.save
