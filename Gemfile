@@ -49,4 +49,5 @@ group :development, :test do
   gem 'shoulda'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'pundit-matchers', '~> 1.4.1'
+  gem 'faker'
 end
