@@ -6,7 +6,6 @@ class ChargesController < ApplicationController
   def create
   # create a normal account, and a subscription
   if params[:subscription]
-
     customer = StripeTool.create_customer(
       email: current_user.email,
       card: params[:stripeToken]
@@ -26,21 +25,26 @@ class ChargesController < ApplicationController
      current_user: current_user
    )
 
-   # current_user.update_attribute(:role, 'premium')
    flash[:notice] = "Thanks for all the money, #{current_user.email}! Your account has been upgraded to Premium."
    redirect_to wikis_path
 
   # find the user account, cancel their subscription, and return to 'standard'
 elsif params[:cancel_subscription]
+  # check if user has a premium subscription
+  if current_user.role != 'premium'
+    flash[:notice]= "You do not have a current subscription."
+    redirect_to wikis_path
+  else
 
   customer = StripeTool.cancel(current_user: current_user)
-
   downgrade = StripeTool.downgrade_user(
     current_user: current_user
   )
 
   flash[:notice] = "Thanks, #{current_user.email}! Your subscription has been cancelled."
   redirect_to wikis_path
+  end
+
   else
     # create a normal account without a subscription
     customer = StripeTool.create_customer(
@@ -74,6 +78,7 @@ elsif params[:cancel_subscription]
       subscribe: nil
     }
   end
+
 
   private
    def set_plan
