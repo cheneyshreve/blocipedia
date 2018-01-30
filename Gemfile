@@ -24,6 +24,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'figaro'
 gem 'pundit'
+gem 'stripe'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -50,4 +51,5 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.0'
   gem 'pundit-matchers', '~> 1.4.1'
   gem 'faker'
+  gem 'dotenv-rails'
 end

@@ -14,6 +14,10 @@ class User < ApplicationRecord
     self.role ||= :standard
   end
 
+  # def self.upgrade(current_user)
+  #   current_user.role = 'premium'
+  # end
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
