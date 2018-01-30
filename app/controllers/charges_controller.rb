@@ -3,19 +3,24 @@ require 'stripe'
 class ChargesController < ApplicationController
 
   def create
- # Creates a Stripe Customer object, for associating with the charge
-   customer = Stripe::Customer.create(
-     email: current_user.email,
-     card: params[:stripeToken]
+
+    customer = StripeTool.create_customer(
+      email: current_user.email,
+      card: params[:stripeToken]
+    )
+
+    charge = StripeTool.create_charge(
+      customer_id: customer.id,
+      amount: Amount.default,
+      description: "Premium Membership - #{current_user.email}",
+      currency: 'usd'
+    )
+
+   upgrade = StripeTool.upgrade_user(
+     current_user: current_user
    )
 
-   charge = Stripe::Charge.create(
-     customer: customer.id, #not same as user_id
-     amount: Amount.default,
-     description: "Premium Membership - #{current_user.email}",
-     currency: 'usd'
-   )
-   current_user.update_attribute(:role, 'premium')
+   # current_user.update_attribute(:role, 'premium')
    flash[:notice] = "Thanks for all the money, #{current_user.email}! Your account has been upgraded to Premium."
    redirect_to wikis_path
 
