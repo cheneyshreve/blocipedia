@@ -34,7 +34,7 @@ elsif params[:cancel_subscription]
 
   customer = StripeTool.cancel(current_user: current_user)
   downgrade = StripeTool.downgrade_user(current_user: current_user)
-  
+
 
   flash[:notice] = "Thanks, #{current_user.email}! Your subscription has been cancelled."
   redirect_to wikis_path
@@ -70,6 +70,10 @@ elsif params[:cancel_subscription]
       amount: Amount.default,
       subscribe: nil
     }
+  end
+
+  def show
+   redirect_to 'charges/new'
   end
 
   private
