@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user) { User.create!(email: 'bloc@bloc.io', password: 'password', role: "standard")}
+  let(:user) { User.create!(email: 'bloc@bloc.io', password: 'password', role: "standard", stripe_customer_id: "")}
 
    describe "attributes" do
      it "responds to email" do
@@ -19,6 +19,11 @@ RSpec.describe User, type: :model do
      it "responds to role" do
        expect(user).to respond_to(:role)
      end
+
+     it "responds to stripe_customer_id" do
+       expect(user).to respond_to(:stripe_customer_id)
+     end
+
    end
 
   context "standard user" do

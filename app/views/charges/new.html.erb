@@ -1,0 +1,17 @@
+<%= form_tag charges_path do %>
+  <h4>Click the button!</h4>
+  <%= label :subscription, class: 'checkbox' do %>
+    Subscribe  <%= check_box params[:subscription], class: "subscribe-checkbox"  %>
+  <% end %>
+  <%= hidden_field_tag :subscription, value: params[:subscription] %>
+  <script class='stripe-button' src="https://checkout.stripe.com/checkout.js" data-key="<%= @stripe_btn_data[:key] %>" data-amount="<%= @stripe_btn_data[:amount] %>" data-description="<%= @stripe_btn_data[:description] %>"></script>
+<% end %>
+
+
+<%= form_tag charges_path do %>
+<%= label :cancel_subscription, class: 'checkbox' do %>
+  Unsubscribe  <%= check_box params[:cancel_subscription], class: "subscribe-checkbox"  %>
+<% end %>
+<%= submit_tag "Confirm cancellation", class: 'btn btn-danger' %>
+<%= hidden_field_tag :cancel_subscription, value: params[:cancel_subscription] %>
+<% end %>

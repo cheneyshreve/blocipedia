@@ -7,16 +7,18 @@ require 'faker'
   email: Faker::Internet.unique.email,
   password: "password",
   password_confirmation: "password",
-  role: 'standard'
+  role: 'standard',
+  stripe_customer_id: 'stripe_customer_id'
   )
 end
 users = User.all
 
 seed_user = User.create(
-  email: "some_email@example.com",
+  email: "admin@admin.com",
   password: "password",
   password_confirmation: "password",
-  role: 'standard'
+  role: "standard",
+  stripe_customer_id: "stripe_customer_id"
 )
 
 10.times do
