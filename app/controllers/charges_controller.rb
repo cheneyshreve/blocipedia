@@ -63,7 +63,6 @@ elsif params[:cancel_subscription]
      current_user: current_user
    )
   end
-
    # Stripe will send back CardErrors. This `rescue block` catches and displays those errors.
     rescue Stripe::CardError => e
       flash[:alert] = e.message
@@ -78,7 +77,6 @@ elsif params[:cancel_subscription]
       subscribe: nil
     }
   end
-
 
   private
    def set_plan

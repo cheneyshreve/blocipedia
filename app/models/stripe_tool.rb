@@ -30,11 +30,11 @@ module StripeTool
   end
 
  def self.upgrade_user(current_user: current_user)
-   current_user.update_attribute(:role, 'premium')
+   current_user.update_attributes(:role => "premium")
  end
 
  def self.downgrade_user(current_user: current_user)
-   current_user.update_attribute(:role, 'standard')
+   current_user.update_attributes(:role => "standard")
  end
 
 end

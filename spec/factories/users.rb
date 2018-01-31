@@ -10,6 +10,7 @@ FactoryGirl.define do
     password_confirmation 'password'
     confirmed_at          Time.now
     role :standard
+    stripe_customer_id ""
   end
 
 end

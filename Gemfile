@@ -52,4 +52,5 @@ group :development, :test do
   gem 'pundit-matchers', '~> 1.4.1'
   gem 'faker'
   gem 'dotenv-rails'
+  gem 'stripe-ruby-mock', '~> 2.5.1', :require => 'stripe_mock'
 end
