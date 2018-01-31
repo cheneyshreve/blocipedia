@@ -31,19 +31,13 @@ class ChargesController < ApplicationController
   # find the user account, cancel their subscription, and return to 'standard'
 elsif params[:cancel_subscription]
   # check if user has a premium subscription
-  if current_user.role != 'premium'
-    flash[:notice]= "You do not have a current subscription."
-    redirect_to wikis_path
-  else
 
   customer = StripeTool.cancel(current_user: current_user)
-  downgrade = StripeTool.downgrade_user(
-    current_user: current_user
-  )
+  downgrade = StripeTool.downgrade_user(current_user: current_user)
+  
 
   flash[:notice] = "Thanks, #{current_user.email}! Your subscription has been cancelled."
   redirect_to wikis_path
-  end
 
   else
     # create a normal account without a subscription

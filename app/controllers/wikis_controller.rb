@@ -20,10 +20,10 @@ class WikisController < ApplicationController
    @wiki.title = params[:wiki][:title]
    @wiki.body = params[:wiki][:body]
    @wiki.user = current_user
+   @wiki.private = params[:wiki][:private]
 
    if @wiki.save
      flash[:notice] = "Wiki was saved."
-     # redirect_to @wiki
      redirect_to wikis_path
    else
      flash.now[:alert] = "There was a problem saving the wiki."

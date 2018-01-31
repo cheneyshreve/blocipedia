@@ -35,6 +35,12 @@ module StripeTool
 
  def self.downgrade_user(current_user: current_user)
    current_user.update_attributes(:role => "standard")
+   current_user.wikis.update_all(:private => "false")
  end
+
+ # def self.downgrade_user_wikis(current_user: current_user)
+ #  user_wikis = current_user.wikis
+ #  user_wikis.update_all(:private => "false")
+ # end
 
 end
