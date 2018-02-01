@@ -12,7 +12,7 @@ RSpec.describe ChargesController, type: :controller do
   let (:charge) { Stripe::Charge.create(customer: customer.id, amount: 1500, currency: 'usd') }
 
   let(:my_user) { User.create!(email: 'blochead@bloc.io', password: 'password', password_confirmation: 'password', role: "premium") }
-  let(:wikis) { Wiki.create!(user: my_user, title: "New wiki title", body: "New wiki body", private: true ) }
+  let(:wikis) { Wiki.new(user: my_user, title: "some wiki", body: "some wiki body", private: true ) }
 
  describe "#create without subscription" do
     it "creates a stripe customer" do
@@ -53,7 +53,7 @@ RSpec.describe ChargesController, type: :controller do
 
     it "changes the user's role back to standard" do
       StripeTool.downgrade_user(current_user: my_user)
-      expect(my_user.role).to eq("standard")
+      expect(my_user).to have_attributes(role: "standard")
     end
   end
 
