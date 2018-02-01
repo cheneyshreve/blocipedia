@@ -72,9 +72,7 @@ elsif params[:cancel_subscription]
     }
   end
 
-  def show
-   redirect_to 'charges/new'
-  end
+
 
   private
    def set_plan
