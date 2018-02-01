@@ -25,6 +25,7 @@ gem 'devise'
 gem 'figaro'
 gem 'pundit'
 gem 'stripe'
+gem 'redcarpet'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
