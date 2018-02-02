@@ -33,19 +33,19 @@ class WikiPolicy < ApplicationPolicy
       def resolve
         wikis = []
         if user.role == 'admin'
-          wikis = scope.all # if the user is an admin, show them all the wikis
-        elsif user.role == 'premium' # premium user
+          wikis = scope.all
+        elsif user.role == 'premium'
           all_wikis = scope.all
           all_wikis.each do |wiki|
-            if !wiki.private || wiki.user_id == user.id || wiki.collaborates.include?(user)
+            if !wiki.private || wiki.user_id == user.id || wiki.users.include?(user)
               wikis << wiki
             end
           end
-        else # standard user
+        else 
           all_wikis = scope.all
           wikis = []
           all_wikis.each do |wiki|
-            if !wiki.private || wiki.collaborates.include?(user)
+            if !wiki.private || wiki.users.include?(user)
               wikis << wiki
             end
           end
