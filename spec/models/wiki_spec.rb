@@ -8,6 +8,7 @@ RSpec.describe Wiki, type: :model do
   it { is_expected.to validate_presence_of(:title) }
   it { is_expected.to validate_presence_of(:body) }
   it { is_expected.to validate_presence_of(:user) }
+  it { is_expected.to have_many(:collaborates) }
 
   describe "attributes" do
     it "resonds to title" do
