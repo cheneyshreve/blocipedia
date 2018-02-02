@@ -3,11 +3,22 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 button.stripe-button-el {
- padding: 5px;
  margin-bottom: 10px;
+ margin-left: 10px;
 }
 
-input.btn.btn-danger {
+.btn.btn-danger {
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.btn.btn-danger.btn-sm {
   padding: 5px;
   margin-bottom: 10px;
+}
+
+input.btn.btn-success {
+  padding: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }

@@ -6,7 +6,6 @@ class CollaboratesController < ApplicationController
     current_collabs = @wiki.users
 
     if @users.include?(@user)
-
         if current_collabs.include?(@user) || @user == current_user
           flash[:notice] = "#{@user.email} is already a wiki collaborator."
         else
