@@ -2,15 +2,26 @@ class CollaboratesController < ApplicationController
   def create
     @wiki = Wiki.find(params[:wiki_id])
     @user = User.find_by(email: params[:collaborate][:user])
-    @collaborator = @wiki.collaborates.new(wiki_id: @wiki.id, user_id: @user.id)
+    @users = User.all
+    current_collabs = @wiki.users
 
-    # need to revise to avoid duplicate adds, consider bad entries, and privacy controls
-     if @collaborator.save
-       flash[:notice] = "#{@user.email} successfully added to wiki."
-     else
-       flash[:error] = "There was a problem adding the user. Please try again."
-     end
-   redirect_to @wiki
+    if @users.include?(@user)
+
+        if current_collabs.include?(@user) || @user == current_user
+          flash[:notice] = "#{@user.email} is already a wiki collaborator."
+        else
+
+        @collaborator = @wiki.collaborates.new(wiki_id: @wiki.id, user_id: @user.id)
+            if @collaborator.save
+              flash[:notice] = "#{@user.email} successfully added to wiki."
+            else
+              flash[:error] = "There was a problem adding the user. Please try again."
+            end
+        end
+    else
+      flash[:notice] = "Not a current wiki user. Please sign-up first, and then add the user."
+    end
+      redirect_to @wiki
   end
 
   def destroy
@@ -24,10 +35,4 @@ class CollaboratesController < ApplicationController
     end
     redirect_to @wiki
   end
-
-  # def show
-  #   @wiki = Wiki.find(params[:wiki_id])
-  #   current_collaborators = @wiki.users
-  # end
-
 end
