@@ -16,11 +16,4 @@ RSpec.describe CollaboratesController, type: :controller do
     end
   end
 
-  # describe "DELETE destroy" do
-  #   it "removes the collaborator" do
-  #     delete :destroy, wiki_id: wiki.id, id: collaborates.id
-  #     count = Collaborate.where({id: collaborates.id })
-  #     expect(count).to eq(0)
-  #   end
-  # end
 end
