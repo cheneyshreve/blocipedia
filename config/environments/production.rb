@@ -100,7 +100,7 @@ Rails.application.configure do
   }
 
   # ActionMailer Config
-  config.action_mailer.default_url_options = { :host =&gt; 'https://immense-ocean-13499.herokuapp.com'}
+  config.action_mailer.default_url_options = { :host => 'https://immense-ocean-13499.herokuapp.com'}
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
