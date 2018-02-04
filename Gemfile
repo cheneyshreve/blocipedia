@@ -9,8 +9,8 @@ end
 gem 'rails', '~> 5.1.2'
 
 group :production do
-  # Use pg as the production database for Active Record
-   gem 'pg', '~> 0.20'
+  # # Use pg as the production database for Active Record
+  #  gem 'pg', '~> 0.20'
   gem 'rails_12factor'
 end
 
