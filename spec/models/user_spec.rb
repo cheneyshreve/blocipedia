@@ -1,7 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user) { User.create!(email: 'bloc@bloc.io', password: 'password', role: "standard", stripe_customer_id: "")}
+  let(:user) { User.create!(email: 'first_bloc@bloc.io', password: 'password', role: "standard", stripe_customer_id: "")}
+  let(:other_user) { User.create!(email: 'second_bloc@bloc.io', password: 'password', role: "premium", stripe_customer_id: "")}
+  let(:wiki) { Wiki.create!(user: user, title: "New wiki title", body: "New wiki body", private: false ) }
+
+  it { is_expected.to have_many(:collaborates) }
 
    describe "attributes" do
      it "responds to email" do

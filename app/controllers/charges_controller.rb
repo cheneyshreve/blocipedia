@@ -72,8 +72,6 @@ elsif params[:cancel_subscription]
     }
   end
 
-
-
   private
    def set_plan
      # test plan info

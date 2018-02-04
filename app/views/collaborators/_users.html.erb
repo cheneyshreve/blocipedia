@@ -1,0 +1,13 @@
+<div class='col-md-8'>
+  <h4>Current wiki users</h4>
+  <ul>
+    <% @wiki.collaborates.each do |collaborator| %>
+    <li>
+    <%= User.find_by_id(collaborator.user_id).email %>
+    <% if policy(@wiki).destroy? %>
+      <%= link_to "Delete", [@wiki, collaborator], class: 'btn btn-danger btn-sm', id: "delete", method: :delete, data: {confirm: 'Are you sure you want to remove this collaborator?'} %>
+    <% end %>
+    </li>
+    <% end %>
+  </ul>
+</div>

@@ -1,14 +1,10 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+  has_many :wikis, dependent: :destroy
+  has_many :collaborates, dependent: :destroy
+  # has_many :wiki_collaborations, through: :collaborates, source: :wiki
 
-   # user roles
   enum role: [:standard, :premium, :admin]
   after_initialize :init
-
-  # def set_default_role
-  #  self.role ||= :standard
-  # end
 
   def init
     self.role ||= :standard
@@ -20,4 +16,8 @@ class User < ApplicationRecord
   has_many :wikis, dependent: :destroy
 
 
+  def collaborates_on(wiki)
+    collaborators = Collaborate.where(user_id: @user.id, wiki_id: @wiki.id)
+    wiki_collaborations = Wiki.where(id: collaborators.pluck(:wiki_id))
+  end
 end
