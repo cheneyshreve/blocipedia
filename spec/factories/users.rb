@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   sequence :email do |n|
     letters = ('a'..'z').to_a
     letters.shuffle!
