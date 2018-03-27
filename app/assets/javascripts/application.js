@@ -27,7 +27,7 @@ blocmetrics.report = function(eventName) {
 
    var request = new XMLHttpRequest();
 
-   request.open("POST", "http://0.0.0.0:3001/api/events", true);
+   request.open("POST", "https://stark-forest-69447.herokuapp.com/api/events", true);
 
    request.setRequestHeader('Content-Type', 'application/json');
 
