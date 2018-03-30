@@ -8,7 +8,7 @@ Rails.application.routes.draw do
    resources :charges, only: [:new, :create]
    resources :collaborates, only: [:create, :destroy]
   end
-  root to: 'welcome#index'
+  root to: 'wikis#index'
   get 'welcome/index'
   get 'welcome/about'
 
