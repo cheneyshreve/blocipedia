@@ -34,8 +34,10 @@ Setup
 
 Running Blocipedia locally:
 - clone the repository on gitload
+```
 $ bundle install
 $ rake db:create
 $ rake db:migrate
 $ rails server
+```
 navigate to localhost:3000 in your web browser
