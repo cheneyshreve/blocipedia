@@ -32,7 +32,20 @@ h4 a {
   font-style: bold;
 }
 
-ul.nav.nav-tabs {
+a {
+  color: white;
+}
+a.navbar-link {
+  color: white;
+  font-style: bold;
+  font-size: 1rem;
+}
+
+strong {
+  color: white;
+  font-size: 1.5rem;
+}
+.nav > li > a {
   color: white;
   font-style: bold;
   font-size: 1.5rem;
@@ -40,7 +53,7 @@ ul.nav.nav-tabs {
 
 .jumbotron {
   font-size: 1.5rem;
-  text-shadow: 1px 0px blue;
+  text-shadow: 1px 0px black;
   color: black;
   opacity: 0.8;
 }

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+  get 'welcome/about'
 
   devise_for :users
   resources :users, only: [:show]
@@ -9,7 +11,6 @@ Rails.application.routes.draw do
    resources :collaborates, only: [:create, :destroy]
   end
   root to: 'wikis#index'
-  get 'welcome/index'
-  get 'welcome/about'
+
 
 end
