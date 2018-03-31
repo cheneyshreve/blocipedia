@@ -39,6 +39,7 @@ a.navbar-link {
   color: white;
   font-style: bold;
   font-size: 1rem;
+  text-shadow: 1px 1px black;
 }
 
 strong {
@@ -53,7 +54,15 @@ strong {
 
 .jumbotron {
   font-size: 1.5rem;
-  text-shadow: 1px 0px black;
   color: black;
   opacity: 0.8;
+}
+
+.btn {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+input.btn {
+  margin: 5px 5px;
 }
