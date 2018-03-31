@@ -1,6 +1,6 @@
+<div class="jumbotron">
 <div class="row">
   <div class="col-md-8">
-
   <% @wikis.each do |wiki| %>
   <% if (current_user.admin? || current_user.premium? || wiki.users.include?(current_user)) || !(wiki.private?) %>
      <h3><%= markdown(wiki.title)%></h3>
@@ -10,4 +10,5 @@
    <% end %>
    <% end %>
   </div>
+</div>
 </div>

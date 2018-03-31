@@ -10,11 +10,10 @@
   </head>
 
   <body>
-    <ul>
-      <div class="container">
+    <div class="container">
       <ul class="nav nav-tabs">
       <li><%= link_to "Home", welcome_index_path %></li>
-      <li><%= link_to "Subscriptions", new_charge_path %></li>
+      <li><%= link_to "Subscribe", new_charge_path %></li>
       <li><%= link_to "About",welcome_about_path %><a href="/about" onclick="blocmetrics.report('about link clicked')"></li>
     </ul>
      <% if flash[:notice] %>

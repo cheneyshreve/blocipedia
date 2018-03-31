@@ -17,5 +17,30 @@
  @import "bootstrap";
 
 .container  {
+  background-image: url(/assets/rawpixel-com-250087-unsplash.jpg);
+  opacity: 0.9;
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  color: black;
+  font-style: bold;
+}
+
+h4 a {
+  color: white;
+  text-shadow: 1px 0px blue;
+  font-style: bold;
+}
+
+ul.nav.nav-tabs {
+  color: white;
+  font-style: bold;
   font-size: 1.5rem;
+}
+
+.jumbotron {
+  font-size: 1.5rem;
+  text-shadow: 1px 0px blue;
+  color: black;
+  opacity: 0.8;
 }
