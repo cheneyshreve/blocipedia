@@ -8,7 +8,7 @@ RSpec.describe WikisController, type: :controller do
   describe "GET #index" do
     before(:each) do
       @request.env["devise.mapping"] = Devise.mappings[:user]
-      user = FactoryGirl.create(:user)
+      user = FactoryBot.create(:user)
       sign_in user
     end
 
@@ -21,7 +21,7 @@ RSpec.describe WikisController, type: :controller do
   describe "GET #show" do
     before(:each) do
       @request.env["devise.mapping"] = Devise.mappings[:user]
-      user = FactoryGirl.create(:user)
+      user = FactoryBot.create(:user)
       sign_in user
     end
    it "returns http success" do
@@ -38,7 +38,7 @@ RSpec.describe WikisController, type: :controller do
   describe "GET #new" do
     before(:each) do
       @request.env["devise.mapping"] = Devise.mappings[:user]
-      user = FactoryGirl.create(:user)
+      user = FactoryBot.create(:user)
       sign_in user
     end
     it "returns http success" do
@@ -60,7 +60,7 @@ RSpec.describe WikisController, type: :controller do
   describe "GET #edit" do
     before(:each) do
       @request.env["devise.mapping"] = Devise.mappings[:user]
-      user = FactoryGirl.create(:user)
+      user = FactoryBot.create(:user)
       sign_in user
     end
     it "returns http success" do
@@ -72,7 +72,7 @@ RSpec.describe WikisController, type: :controller do
   describe "POST create" do
     before(:each) do
       @request.env["devise.mapping"] = Devise.mappings[:user]
-      user = FactoryGirl.create(:user)
+      user = FactoryBot.create(:user)
       sign_in user
     end
 
@@ -83,14 +83,14 @@ RSpec.describe WikisController, type: :controller do
 
     it "redirects to the new wiki" do
       post :create, params: { id: my_wiki.id, wiki: { title: "new wiki title", body: "new wiki body" } }
-      expect(response).to redirect_to(wikis_path)
+      expect(response).to redirect_to(Wiki.last)
     end
 end
 
 describe "DELETE destroy" do
   before(:each) do
     @request.env["devise.mapping"] = Devise.mappings[:user]
-    user = FactoryGirl.create(:user)
+    user = FactoryBot.create(:user)
     sign_in user
   end
    it "returns http redirect" do

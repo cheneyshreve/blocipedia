@@ -8,7 +8,7 @@ describe WikiPolicy, type: :policy do
 
   subject { described_class.new(user,wiki) }
 
-  let(:user) { FactoryGirl.create(:user) }
+  let(:user) { FactoryBot.create(:user) }
 
   context "for a wiki user" do
     let(:wiki) { Wiki.create(user: user, title: "Wiki name", body: "Wiki body") }
