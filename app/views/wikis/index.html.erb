@@ -9,6 +9,8 @@
         <div class="media-body">
           <h4 class="media-heading">
             <%= link_to wiki.title, edit_wiki_path(wiki) %>
+            <%= link_to "Edit", edit_wiki_path(wiki), class: 'btn btn-success' %>
+            <%= link_to "Delete", wiki, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this wiki?' } %>
           </h4>
         </div>
       </div>
