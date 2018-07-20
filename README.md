@@ -4,7 +4,7 @@ The social wiki app is a Ruby-on-Rails application that allows users to create p
 
 Visit the live version on [Heroku](https://immense-ocean-13499.herokuapp.com).
 Or check out this demo
-![alt text](https://raw.githubusercontent.com/cheneyshreve/blocmarks/master/app/assets/images/wikis_demo.gif)
+![alt text](https://raw.githubusercontent.com/cheneyshreve/blocipedia/master/app/assets/images/wikis_demo.gif)
 
 ## Some key features:
 - users can create a free, standard account and have access to public wikis, or private wikis they are added to as collaborators
