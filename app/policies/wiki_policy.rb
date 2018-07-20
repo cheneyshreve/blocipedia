@@ -41,7 +41,7 @@ class WikiPolicy < ApplicationPolicy
               wikis << wiki
             end
           end
-        else 
+        else
           all_wikis = scope.all
           wikis = []
           all_wikis.each do |wiki|
@@ -53,5 +53,4 @@ class WikiPolicy < ApplicationPolicy
         wikis
       end
     end
-
 end

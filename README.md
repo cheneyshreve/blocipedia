@@ -1,8 +1,12 @@
-# Blocipedia
+# Social Wiki App
 
-Blocipedia is a Ruby-on-Rails application that allows users to create public and private Markdown-based wikis.
+The social wiki app is a Ruby-on-Rails application that allows users to create public and private Markdown-based wikis.
 
-## Some key features of Blocipedia:
+Visit the live version on [Heroku](https://immense-ocean-13499.herokuapp.com).
+Or check out this demo
+![alt text](https://raw.githubusercontent.com/cheneyshreve/blocmarks/master/app/assets/images/wikis_demo.gif)
+
+## Some key features:
 - users can create a free, standard account and have access to public wikis, or private wikis they are added to as collaborators
 - users can sign up for a premium account to view and create private wikis and manage collaborators
 - when a user downgrades their account from premium to standard, the wikis are made public

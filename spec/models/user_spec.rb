@@ -6,7 +6,6 @@ RSpec.describe User, type: :model do
   let(:wiki) { Wiki.create!(user: user, title: "New wiki title", body: "New wiki body", private: false ) }
 
   it { is_expected.to have_many(:collaborates) }
-
    describe "attributes" do
      it "responds to email" do
       expect(user).to respond_to(:email)
@@ -29,7 +28,7 @@ RSpec.describe User, type: :model do
      end
 
    end
-
+   
   context "standard user" do
     it "is standard by default" do
         expect(user.role).to eql("standard")
