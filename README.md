@@ -2,7 +2,6 @@
 
 The social wiki app is a Ruby-on-Rails application that allows users to create public and private Markdown-based wikis.
 
-Visit the live version on [Heroku](https://immense-ocean-13499.herokuapp.com).
 Or check out this demo
 ![alt text](https://raw.githubusercontent.com/cheneyshreve/blocipedia/master/app/assets/images/wikis_demo.gif)
 
